@@ -4,17 +4,17 @@ interface PalleteProps {
   darktheme?: boolean
 }
 
-export default function Pallete({ title = 'Pallete', colors, darktheme }: PalleteProps) {
+export default function Pallete({ title = '', colors, darktheme }: PalleteProps) {
   return (
     <div className={`flex flex-col gap-4`}>
       <div className="text-gray-400">{title}</div>
       <div
         className={`flex gap-20 rounded-md p-6 ${
           darktheme ? 'bg-black/90 text-white' : 'bg-white text-black'
-        }`}
+        } overflow-auto`}
       >
         {colors?.map(({ name, value }, i) => (
-          <div key={i} className="flex flex-col items-center gap-1">
+          <div key={i} className="flex flex-col items-center gap-1 w-[180px]">
             <div style={{ backgroundColor: value }} className="rounded-full w-36 h-36" />
             <div className="mt-4">{name}</div>
             <div>{value}</div>

@@ -1,0 +1,56 @@
+.avatar {
+  @apply relative inline-flex;
+
+  & > div {
+    @apply inline-flex justify-center items-center;
+  }
+
+  &-size-small {
+    @apply w-8 h-8;
+    :where(& > svg) {
+      @apply w-6 h-6;
+    }
+  }
+
+  &-size-default {
+    @apply w-16 h-16;
+    :where(& > svg) {
+      @apply w-12 h-12;
+    }
+  }
+
+  &-size-large {
+    @apply w-32 h-32;
+    :where(& > svg) {
+      @apply w-28 h-28;
+    }
+  }
+
+  &-gap-1 {
+    @apply gap-1;
+  }
+
+  &-gap-2 {
+    @apply gap-2;
+  }
+
+  &-gap-3 {
+    @apply gap-3;
+  }
+
+  &-gap-4 {
+    @apply gap-4;
+  }
+
+  &-circle {
+    @apply rounded-full;
+  }
+
+  &-squre {
+    @apply rounded-sm;
+  }
+
+  & > div > img svg {
+    @apply w-full h-full object-cover m-auto;
+  }
+}

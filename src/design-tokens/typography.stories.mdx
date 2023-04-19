@@ -1,0 +1,111 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
+
+import Pallete from './TypographyPallete'
+
+<Meta title="Design Tokens/Typography" />
+
+# Typography
+
+<br />
+
+## <b>Font-Family</b>
+
+<br />
+
+<p style={{ fontSize: 30, textDecoration: 'underline' }}>
+  <b>Pretendard</b>
+</p>
+
+<br />
+
+## <b>Heading</b>
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+  <Pallete
+    text={{
+      type: 'H1',
+      content: 'H1. Heading 40 bold',
+    }}
+    fontSize={40}
+    fontWeight="bold"
+    lineHeight={150}
+  />
+  <Pallete
+    text={{
+      type: 'H2',
+      content: 'H2. Heading 29 bold',
+    }}
+    fontSize={29}
+    fontWeight="bold"
+    lineHeight={150}
+  />
+  <Pallete
+    text={{
+      type: 'H3',
+      content: 'H3. Heading 24 bold',
+    }}
+    fontSize={24}
+    fontWeight="bold"
+    lineHeight={150}
+  />
+  <Pallete
+    text={{
+      type: 'H4',
+      content: 'H4. Heading 20 bold, H4. Heading 20 normal',
+    }}
+    fontSize={20}
+    fontWeight="bold / normal"
+    lineHeight={150}
+  />
+  <Pallete
+    text={{
+      type: 'H5',
+      content: 'H5. Heading 18 medium, H5. Heading 18 normal',
+    }}
+    fontSize={18}
+    fontWeight="medium / normal"
+    lineHeight={150}
+  />
+</div>
+
+<br />
+
+## <b>Body</b>
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+  <Pallete
+    text={{
+      type: 'p1',
+      content: 'p1. Body 16 Bold, p1. Body 16 medium, p1. Body 16 normal',
+    }}
+    fontSize={16}
+    fontWeight="bold / medium / normal"
+    lineHeight={150}
+  />
+  <Pallete
+    text={{
+      type: 'p2',
+      content: 'p2. Body 14 medium, p2. Body 14 normal',
+    }}
+    fontSize={14}
+    fontWeight="medium / normal"
+    lineHeight={150}
+  />
+</div>
+
+<br />
+
+## <b>Caption</b>
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+  <Pallete
+    text={{
+      type: 'caption',
+      content: 'Caption. 12 normal',
+    }}
+    fontSize={12}
+    fontWeight="normal"
+    lineHeight={150}
+  />
+</div>

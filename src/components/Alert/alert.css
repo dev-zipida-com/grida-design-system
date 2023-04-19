@@ -18,27 +18,27 @@
   }
 
   &-success {
-    @apply bg-success/10 border-success;
+    @apply bg-statusSuccess/10 border-statusSuccess;
     :where(.icon) {
-      @apply text-success;
+      @apply text-statusSuccess;
     }
   }
   &-warning {
-    @apply bg-warning/10 border-warning;
+    @apply bg-statusWarning/10 border-statusWarning;
     :where(.icon) {
-      @apply text-warning;
+      @apply text-statusWarning;
     }
   }
   &-error {
-    @apply bg-error/10 border-error;
+    @apply bg-statusError/10 border-statusError;
     :where(.icon) {
-      @apply text-error;
+      @apply text-statusError;
     }
   }
   &-info {
-    @apply bg-info/10 border-info;
+    @apply bg-statusProcessing/10 border-statusProcessing;
     :where(.icon) {
-      @apply text-info;
+      @apply text-statusProcessing;
     }
   }
 

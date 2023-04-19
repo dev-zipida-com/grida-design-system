@@ -9,12 +9,12 @@ export default function Pallete({ title = '', colors, darktheme }: PalleteProps)
     <div className={`flex flex-col gap-4`}>
       <div className="text-gray-400">{title}</div>
       <div
-        className={`flex gap-20 rounded-md p-6 ${
+        className={`flex flex-wrap rounded-md p-6 gap-y-5 overflow-auto ${
           darktheme ? 'bg-black/90 text-white' : 'bg-white text-black'
-        } overflow-auto`}
+        }`}
       >
         {colors?.map(({ name, value }, i) => (
-          <div key={i} className="flex flex-col items-center gap-1 w-[180px]">
+          <div key={i} className="flex w-1/4 flex-col items-center gap-1">
             <div style={{ backgroundColor: value }} className="rounded-full w-36 h-36" />
             <div className="mt-4">{name}</div>
             <div>{value}</div>

@@ -1,0 +1,59 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
+
+import Pallete from './ElevationPallete'
+
+<Meta title="Design Tokens/Elevation" />
+
+# Elevation
+
+<br />
+
+## <b>Lightmode</b>
+
+<Pallete
+  shadows={[
+    {
+      title: 'Shadow 1',
+      shadow: '2px 3px 4px rgba(0, 0, 0, 0.02)',
+    },
+    {
+      title: 'Shadow 2',
+      shadow: '0px 4px 3px rgba(0, 0, 0, 0.05), 2px 0px 11px rgba(0, 0, 0, 0.05)',
+    },
+    {
+      title: 'Shadow 3',
+      shadow: '0px 4px 3px rgba(0, 0, 0, 0.05), 6px 5px 16px rgba(0, 0, 0, 0.13)',
+    },
+    {
+      title: 'Shadow 4',
+      shadow: '0px 4px 3px rgba(0, 0, 0, 0.05), 8px 10px 14px rgba(0, 0, 0, 0.14)',
+    },
+  ]}
+/>
+
+<br />
+
+## <b>Darkmode</b>
+
+<Pallete
+  dark
+  shadows={[
+    {
+      title: 'Shadow 1',
+      shadow: '2px 3px 4px rgba(0, 0, 0, 0.02)',
+    },
+    {
+      title: 'Shadow 2',
+      shadow: '0px 4px 3px rgba(0, 0, 0, 0.05), 2px 0px 11px rgba(0, 0, 0, 0.05)',
+    },
+    {
+      title: 'Shadow 3',
+      shadow: '0px 4px 3px rgba(0, 0, 0, 0.05), 6px 5px 16px rgba(0, 0, 0, 0.13)',
+    },
+    {
+      title: 'Shadow 4',
+      shadow: '0px 4px 3px rgba(0, 0, 0, 0.05), 8px 10px 14px rgba(0, 0, 0, 0.14)',
+    },
+  ]}
+/>

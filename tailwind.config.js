@@ -37,6 +37,9 @@ export default {
         darkSecondaryText: 'rgba(255, 255, 255, 0.8)',
         darkDivider: 'rgba(255, 255, 255, 0.3)',
       },
+      fontFamily: {
+        pretendard: ['Pretendard'],
+      },
     },
   },
   plugins: [],

@@ -1,0 +1,163 @@
+.button {
+  @apply transition-all duration-150 ease-in-out rounded-full font-pretendard inline-flex justify-center items-center;
+
+  &:focus {
+    @apply outline outline-2 outline-themeFocusStroke;
+  }
+
+  &-size-small {
+    @apply py-1 px-5 text-sm;
+  }
+
+  &-size-middle {
+    @apply py-1 px-6 text-base;
+  }
+
+  &-size-large {
+    @apply py-1 px-7 text-lg;
+  }
+
+  &-default {
+    @apply bg-white text-stone-500 border border-solid border-slate-200;
+
+    &:hover {
+      @apply border-slate-400;
+    }
+
+    &:active {
+      @apply drop-shadow border-slate-700 text-stone-800;
+    }
+
+    &.button-dangerous {
+      @apply border-statusError text-statusError;
+
+      &:hover {
+        @apply border-statusErrorHover text-statusErrorHover;
+      }
+
+      &:active {
+        @apply border-statusError text-statusError;
+      }
+    }
+  }
+
+  &-primary {
+    @apply bg-themePrimary text-white border-none;
+
+    &:hover {
+      @apply bg-themeHover;
+    }
+
+    &:active {
+      @apply bg-themeActive;
+    }
+
+    &.button-dangerous {
+      @apply bg-statusError;
+
+      &:hover {
+        @apply bg-statusErrorHover;
+      }
+
+      &:active {
+        @apply bg-statusError;
+      }
+    }
+  }
+
+  &-outline {
+    @apply bg-white text-themePrimary border border-solid border-themePrimary;
+
+    &:hover {
+      @apply text-themeHover border-themeHover;
+    }
+
+    &:active {
+      @apply text-themeActive border-themeActive;
+    }
+
+    &.button-dangerous {
+      @apply border-statusError text-statusError;
+
+      &:hover {
+        @apply border-statusErrorHover text-statusErrorHover;
+      }
+
+      &:active {
+        @apply border-statusError text-statusError;
+      }
+    }
+  }
+
+  &-dashed {
+    @apply bg-white text-stone-500 border border-dashed border-slate-200;
+
+    &:hover {
+      @apply border-slate-400;
+    }
+
+    &:active {
+      @apply drop-shadow border-slate-700 text-stone-800;
+    }
+
+    &.button-dangerous {
+      @apply border-statusError text-statusError;
+
+      &:hover {
+        @apply border-statusErrorHover text-statusErrorHover;
+      }
+
+      &:active {
+        @apply border-statusError text-statusError;
+      }
+    }
+  }
+
+  &-text {
+    @apply text-themePrimary border-none;
+
+    &:hover {
+      @apply text-themeHover;
+    }
+
+    &:active {
+      @apply text-stone-800;
+    }
+
+    &.button-dangerous {
+      @apply text-statusError;
+
+      &:hover {
+        @apply text-statusErrorHover;
+      }
+
+      &:active {
+        @apply text-statusError;
+      }
+    }
+  }
+
+  &-link {
+    @apply text-stone-500  border-none;
+
+    &:hover {
+      @apply text-themeHover;
+    }
+
+    &:active {
+      @apply text-themeActive;
+    }
+
+    &.button-dangerous {
+      @apply text-statusError;
+
+      &:hover {
+        @apply text-statusErrorHover;
+      }
+
+      &:active {
+        @apply text-statusError;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.container {
+  @apply flex items-center mb-4;
+}
+
+.checkbox {
+  @apply w-4 h-4 text-themePrimary bg-gray-100 border-gray-300;
+
+  &:checked {
+    @apply bg-themePrimary;
+  }
+
+  &:focus {
+    @apply outline-none ring-0;
+  }
+}
+
+.checkmark {
+}

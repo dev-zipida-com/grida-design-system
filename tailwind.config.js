@@ -22,6 +22,8 @@ export default {
 
         statusWarning: 'rgba(242, 170, 82, 1)',
         statusError: 'rgba(242, 100, 96, 1)',
+        statusErrorHover: '#FCC9CC',
+        statusError25: 'rgba(252, 201, 204, 0.25)',
         statusSuccess: 'rgba(71, 184, 129, 1)',
         statusProcessing: 'rgba(47, 128, 237, 1)',
 
@@ -42,7 +44,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
   // corePlugins: {
   //   preflight: false,
   // },

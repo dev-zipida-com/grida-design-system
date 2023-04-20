@@ -32,7 +32,7 @@ export interface BadgeProps {
   /**
    * 배지를 상태 점으로 설정합니다.
    */
-  status?: 'success' | 'processing' | 'default' | 'error' | 'warning'
+  status?: '' | 'success' | 'processing' | 'default' | 'error' | 'warning'
   /**
    * 상태가 설정되면, 텍스트는 상태 점의 표시 텍스트를 설정합니다.
    */
@@ -43,21 +43,46 @@ export interface BadgeProps {
   title?: string
 }
 
+const BADGE_STATUS = {
+  success: { style: 'badge-success', content: 'Success' },
+  error: { style: 'badge-error', content: 'Error' },
+  default: { style: 'badge-default', content: 'Default' },
+  warning: { style: 'badge-warning', content: 'Warning' },
+  processing: { style: 'badge-processing', content: 'Processing' },
+} as const
+
 export default function Badge({
   color = '#F26460',
   count = '1',
-  dot,
-  offset,
-  overflowCount,
-  showZero,
-  size,
+  dot = false,
+  overflowCount = 99,
+  showZero = false,
+  size = 'default',
   status,
   text,
-  title,
 }: BadgeProps) {
-  return (
-    <div className={`badge bg-[${color}]`}>
-      <span className={`badge-text`}>{Number(count) > 99 ? `${count}+` : count || ''}</span>
+  const badgeStatus = status ? BADGE_STATUS[status] : null
+
+  return badgeStatus ? (
+    <div className={`badge-status ${badgeStatus.style}`}>
+      <div className={'badge-dot'}></div>
+      <span className={'badge-text'} style={{ color: 'rgba(0, 0, 0, 0.87)' }}>
+        {badgeStatus.content || text}
+      </span>
+    </div>
+  ) : dot ? (
+    <div className={`badge-dot`} style={{ backgroundColor: `${color}` }}></div>
+  ) : (
+    <div className={`badge badge-size-${size}`} style={{ backgroundColor: `${color}` }}>
+      <span className={`badge-text`}>
+        {showZero
+          ? Number(count) > Number(overflowCount)
+            ? `${overflowCount}+`
+            : count || 0
+          : Number(count) > Number(overflowCount)
+          ? `${overflowCount}+`
+          : count || ''}
+      </span>
     </div>
   )
 }

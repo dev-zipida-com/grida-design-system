@@ -1,0 +1,119 @@
+.tag {
+  @apply relative inline-flex rounded-md;
+
+  & > .icon-section {
+    @apply flex items-center mr-[5px];
+  }
+
+  & > .tag-text {
+    @apply flex items-center;
+  }
+
+  & > .close-section > .cursor-pointer {
+    @apply ml-2;
+  }
+
+  &-small {
+    @apply px-3 py-1;
+
+    & .tag-text > .text {
+      @apply text-sm font-pretendard font-medium text-primaryText;
+    }
+    & .icon-section > .icon {
+      width: 13px;
+      height: 13px;
+    }
+    & .close-section > .cursor-pointer > .icon {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &-medium {
+    @apply px-3.5 py-[5px];
+
+    & .tag-text > .text {
+      @apply text-base font-pretendard font-medium text-primaryText;
+    }
+    & .icon-section > .icon {
+      width: 15px;
+      height: 15px;
+    }
+    & .close-section > .cursor-pointer > .icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &-large {
+    @apply px-[18px] py-1.5;
+
+    & .tag-text > .text {
+      @apply text-lg font-pretendard font-medium text-primaryText;
+    }
+    & .icon-section > .icon {
+      width: 17px;
+      height: 17px;
+    }
+    & .close-section > .cursor-pointer > .icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &-default {
+    @apply bg-bgPrimary;
+    :where(.icon) {
+      @apply text-primaryText;
+    }
+  }
+  &-primary {
+    @apply bg-themePrimary/10;
+    :where(.icon) {
+      @apply text-themePrimary;
+    }
+    & > .tag-text > .text {
+      @apply text-themePrimary;
+    }
+  }
+  &-error {
+    @apply bg-statusError/10;
+    :where(.icon) {
+      @apply text-statusError;
+    }
+    & > .tag-text > .text {
+      @apply text-statusError;
+    }
+  }
+  &-success {
+    @apply bg-statusSuccess/10;
+    :where(.icon) {
+      @apply text-statusSuccess;
+    }
+    & > .tag-text > .text {
+      @apply text-statusSuccess;
+    }
+  }
+  &-warning {
+    @apply bg-statusWarning/10;
+    :where(.icon) {
+      @apply text-statusWarning;
+    }
+    & > .tag-text > .text {
+      @apply text-statusWarning;
+    }
+  }
+  &-processing {
+    @apply bg-statusProcessing/10;
+    :where(.icon) {
+      @apply text-statusProcessing;
+    }
+    & > .tag-text > .text {
+      @apply text-statusProcessing;
+    }
+  }
+
+  & > .close-section {
+    @apply flex items-center;
+  }
+}

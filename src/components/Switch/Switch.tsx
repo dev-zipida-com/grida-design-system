@@ -21,34 +21,20 @@ export interface SwitchProps {
    */
   checkedChildren?: React.ReactNode
   /**
-   * 초기 상태 설정 여부를 설정합니다.
-   * * 기본 값은 false입니다.
-   */
-  defaultChecked?: boolean
-  /**
    * 스위치 비활성화 속성입니다.
    * * 기본 값은 false입니다.
    */
   disabled?: boolean
   /**
-   * 스위치 로딩 상태 속성입니다.
-   * * 기본 값은 false입니다.
-   */
-  loading?: boolean
-  /**
    * 스위치의 크기를 선택하는 속성입니다.
-   * 옵션 : default, small
-   * 기본값은 default입니다.
+   * 옵션 : small, medium
+   * 기본값은 small입니다.
    */
-  size?: 'default' | 'small'
+  size?: 'small' | 'medium'
   /**
    * 상태가 선택 취소되었을 때 표시할 콘텐츠입니다.
    */
   unCheckedChildren?: React.ReactNode
-  /**
-   * 체크된 상태가 변경될 때 트리거입니다.
-   */
-  onChange?: (checked: boolean, event: React.ChangeEvent<HTMLInputElement>) => void
   /**
    * Switch 클릭 할 때 트리거입니다.
    */
@@ -70,33 +56,42 @@ export default function Tag({
   autoFocus = false,
   checked = false,
   checkedChildren,
-  defaultChecked = false,
-  disabled = false,
-  loading = false,
-  size = 'default',
   unCheckedChildren,
-  onChange,
+  disabled = false,
+  size = 'small',
   onClick,
 }: SwitchProps) {
-  const [isToggle, setToggle] = useState(defaultChecked ? defaultChecked : checked)
+  const [isToggle, setToggle] = useState<boolean>(checked)
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setToggle((prev) => !prev)
+    onClick?.(isToggle, e)
   }
 
   return (
     <button
       type="button"
       role="switch"
-      aria-checked={checked}
+      autoFocus={autoFocus}
+      aria-checked={isToggle}
       onClick={handleClick}
-      style={!isToggle ? { background: '#dedede' } : {}}
-      className="switch"
+      disabled={disabled}
+      className={`switch ${disabled ? 'switch-disabled' : ''} ${
+        isToggle ? 'switch-on' : 'switch-off'
+      } ${size === 'medium' ? 'switch-size-medium' : ''}`}
     >
       <div
-        style={isToggle ? { left: 'calc(100% - 27px)' } : { left: 2 }}
-        className="switch-handle"
+        className={`switch-handle ${isToggle ? 'switch-handle-on' : ''} ${
+          size === 'medium' ? 'switch-handle-medium' : ''
+        }`}
       />
+      <span
+        className={`switch-inner ${isToggle ? 'switch-inner-on' : ''} ${
+          size === 'medium' ? 'switch-inner-medium' : ''
+        }`}
+      >
+        {isToggle ? checkedChildren : unCheckedChildren}
+      </span>
     </button>
   )
 }

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import Switch from './Switch'
+import Slider from './Slider'
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
-const meta: Meta<typeof Switch> = {
-  title: 'Components/Switch',
-  component: Switch,
+const meta: Meta<typeof Slider> = {
+  title: 'Components/Slider',
+  component: Slider,
   tags: ['autodocs'],
   argTypes: {},
 }
@@ -18,24 +18,30 @@ export const Default: Story = {
   args: {},
 }
 
-export const On: Story = {
+export const InputValue: Story = {
   args: {
-    checked: true,
+    value: 50,
   },
 }
 
 export const Disabled: Story = {
   args: {
-    checked: true,
+    value: 30,
     disabled: true,
   },
 }
 
-export const TextChildren: Story = {
+export const InputNumber: Story = {
   args: {
-    checked: true,
-    checkedChildren: 'ON',
-    unCheckedChildren: 'OFF',
+    value: 30,
+    inputNumber: true,
+  },
+}
+
+export const Vertical: Story = {
+  args: {
+    value: 30,
+    vertical: true,
   },
 }
 

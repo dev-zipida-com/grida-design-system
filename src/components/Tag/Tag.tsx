@@ -99,14 +99,15 @@ export default function Tag({
       }`}
     >
       <section className="icon-section">
-        {React.isValidElement(icon) ? (
-          React.cloneElement(icon as React.ReactElement, {
-            style: { color: color },
-            className: 'icon',
-          })
-        ) : (
-          <tagType.icon className="icon" />
-        )}
+        {icon &&
+          (React.isValidElement(icon) ? (
+            React.cloneElement(icon as React.ReactElement, {
+              style: { color: color },
+              className: 'icon',
+            })
+          ) : (
+            <tagType.icon className="icon" />
+          ))}
       </section>
       <section className="tag-text">
         <span style={{ color: color }} className="text">

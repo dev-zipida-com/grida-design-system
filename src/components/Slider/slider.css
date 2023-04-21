@@ -1,0 +1,87 @@
+.slider {
+  @apply flex flex-row items-center gap-[20px];
+
+  &-range {
+    @apply cursor-pointer w-[250px] h-[4px];
+
+    &-disabled {
+      @apply cursor-not-allowed;
+    }
+
+    &-vertical {
+      @apply w-[4px] h-[250px];
+      appearance: slider-vertical;
+    }
+    border-radius: 10px;
+    outline: none;
+    accent-color: #8c3eff;
+  }
+
+  &-number {
+    @apply relative flex flex-row w-[64px] h-[30px];
+
+    &-input {
+      @apply p-0 pl-2 w-full h-full text-[14px] border-solid border-[1px] border-divider rounded-sm;
+      border: 1px solid #dedede;
+
+      &:focus {
+        border: 1px solid #8c3eff;
+        box-shadow: 0px 0px 3px #986bff;
+      }
+    }
+
+    &-button {
+      @apply absolute right-0 flex flex-col items-center justify-center;
+
+      &-plus {
+        @apply flex items-center justify-center w-[20px] h-[15px] text-[14px] text-secondaryText border-l-[1px] border-b-[1px] border-solid border-divider cursor-pointer;
+
+        &:hover {
+          @apply bg-themeHover text-white border-themeHover border-l-[1px] border-b-[1px];
+        }
+        &:active {
+          @apply bg-themePrimary text-white border-themePrimary border-l-[1px] border-b-[1px];
+        }
+      }
+      &-minus {
+        @apply flex items-center justify-center w-[20px] h-[15px] text-[16px] text-secondaryText border-l-[1px] border-solid border-divider cursor-pointer;
+        &:hover {
+          @apply bg-themeHover text-white border-themeHover border-l-[1px] border-b-[1px];
+        }
+        &:active {
+          @apply bg-themePrimary text-white border-themePrimary border-l-[1px] border-t-[1px];
+        }
+      }
+    }
+  }
+}
+
+/* input type=number박스 증가,감소 버튼 없애기 */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*
+  input type=range 기본 스타일 숨기기
+*/
+/* input[type='range'] {
+  -webkit-appearance: none; // 기본슬라이드 숨기기
+  width: 100%; // Firefox에서는 특정한 넓이가 필요
+  background: transparent; // Chrome에서 투명하게 출력
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+input[type='range']:focus {
+  outline: none; // input range에 포커스 되었을 경우 기본 블러처리 제거
+}
+input[type='range']::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  // IE에서 기본슬라이드 숨기기
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+} */

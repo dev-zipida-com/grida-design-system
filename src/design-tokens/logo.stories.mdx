@@ -1,5 +1,7 @@
+import { storiesOf } from '@storybook/react'
 import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
+import { DesignTokenDocBlock } from 'storybook-design-token'
+import Logo from '../assets/logo.svg'
 
 <Meta title="Design Tokens/Logo" />
 
@@ -8,5 +10,5 @@ import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
 <div style={{ height: 100 }} />
 
 <p align="center">
-  <img width="150" src="src/assets/logo.svg" alt="logo" style={{ width: '70%' }} />
+  <img width="150" src={Logo} alt="logo" style={{ width: '70%' }} />
 </p>

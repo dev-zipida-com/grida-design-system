@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-vite'
+
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -13,7 +14,10 @@ const config: StorybookConfig = {
         postCss: true,
       },
     },
-    'storybook-design-token',
+    {
+      name: 'storybook-design-token',
+      options: { preserveCSSVars: true },
+    },
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -22,6 +26,9 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
     defaultName: 'Documentation',
+  },
+  core: {
+    builder: '@storybook/builder-vite',
   },
 }
 export default config

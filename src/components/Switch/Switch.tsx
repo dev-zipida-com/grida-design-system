@@ -8,7 +8,7 @@ import React, { useState } from 'react'
 export interface SwitchProps {
   /**
    * 해당 컴포넌트가 그려질 때 최초로 포커스를 획득하는지 여부로 사용가능합니다.
-   * * 기본 값은 false입니다.
+   * 기본 값은 false입니다.
    */
   autoFocus?: boolean
   /**
@@ -22,7 +22,7 @@ export interface SwitchProps {
   checkedChildren?: React.ReactNode
   /**
    * 스위치 비활성화 속성입니다.
-   * * 기본 값은 false입니다.
+   * 기본 값은 false입니다.
    */
   disabled?: boolean
   /**
@@ -52,7 +52,7 @@ export interface SwitchProps {
  * import { Switch } from "grida";
  * ```
  */
-export default function Tag({
+export default function Switch({
   autoFocus = false,
   checked = false,
   checkedChildren,

@@ -33,8 +33,9 @@ export const Disabled: Story = {
 
 export const InputNumber: Story = {
   args: {
-    value: 30,
+    value: 10,
     inputNumber: true,
+    step: 1,
   },
 }
 

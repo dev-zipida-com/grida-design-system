@@ -1,5 +1,10 @@
 import './badge.css'
 
+import React from 'react'
+
+/**
+ * Badge 컴포넌트의 props입니다.
+ */
 export interface BadgeProps {
   /**
    * 배지 도트 색상을 사용자 정의할 수 있습니다.
@@ -51,6 +56,17 @@ const BADGE_STATUS = {
   processing: { style: 'badge-processing', content: 'Processing' },
 } as const
 
+/**
+ * UI 요소의 작은 숫자 값 또는 상태 설명자입니다.
+ *
+ * ## 언제 사용하나요?
+ * - 배지는 일반적으로 알림 또는 사용자 아바타 근처에 시선을 사로잡는 모양으로 표시됩니다.
+ * - 일반적으로 읽지 않은 메시지 수를 표시합니다.
+ *
+ * ```js
+ * import { Badge } from "grida";
+ * ```
+ */
 export default function Badge({
   color = '#F26460',
   count = '1',

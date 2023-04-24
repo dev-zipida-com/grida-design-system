@@ -48,6 +48,16 @@ CORS 설정 속성입니다. "anonymous", "use-credentials", 또는 빈 문자�
   onError?: () => boolean
 }
 
+/**
+ * 아바타는 사람이나 사물을 표현하는 데 사용할 수 있습니다.
+ *
+ * ## 언제 사용하나요?
+ * - 이미지, 아이콘 또는 문자가 필요할 때 사용할 수 있습니다.
+ *
+ * ```js
+ * import { Avatar } from "grida";
+ * ```
+ */
 export default function Avatar({
   alt,
   gap = 4,

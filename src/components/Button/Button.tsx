@@ -1,5 +1,8 @@
 import './button.css'
 
+/**
+ * Button 컴포넌트의 props입니다.
+ */
 export interface ButtonProps {
   /** 버튼 너비를 부모 요소의 너비에 맞추는 옵션 */
   block?: boolean
@@ -30,6 +33,13 @@ export interface ButtonProps {
   children?: React.ReactNode
 }
 
+/**
+ * 버튼 컴포넌트입니다.
+ *
+ * ```js
+ * import { Button } from "grida";
+ * ```
+ */
 export default function Button({
   block = false,
   danger = false,

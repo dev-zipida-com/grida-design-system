@@ -1,0 +1,33 @@
+.select {
+  @apply p-0 py-[5px] px-[12px] m-0 w-auto min-w-[155px] h-[34px] rounded-[2px];
+  @apply text-titleText text-base font-pretendard font-normal leading-[150%];
+  border: 1px solid #dedede;
+
+  &-size-large {
+    @apply h-[37px] text-lg;
+  }
+
+  &-size-small {
+    @apply py-[4px] h-[29px] text-sm;
+  }
+
+  &:hover {
+    border: 1px solid rgba(166, 106, 255, 1);
+  }
+
+  &:focus {
+    border: 1px solid #8c3eff;
+    /* form/active-theme */
+
+    box-shadow: 0px 0px 3px #986bff;
+  }
+
+  &-disabled {
+    @apply bg-bgDisabled cursor-not-allowed text-secondaryText;
+    border: 1px solid #dedede;
+
+    &:hover {
+      border: 1px solid #dedede;
+    }
+  }
+}

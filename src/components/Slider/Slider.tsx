@@ -1,6 +1,6 @@
 import './slider.css'
 
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 /**
  * Slider 컴포넌트의 props입니다.
@@ -99,6 +99,17 @@ export default function Slider({
   const ref = useRef<HTMLInputElement>(null)
   const plusRef = useRef<HTMLInputElement>(null)
   const [valueState, setValueState] = useState<number>(value ? value : defaultValue)
+  const [isDemical, setIsDemical] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (!step) return
+
+    const strValue = step.toString() // 숫자 값을 문자열로 변환
+    if (strValue.indexOf('.') !== -1) {
+      // 소수점이 있는지 여부를 확인setIsDemical
+      setIsDemical(true)
+    }
+  }, [step])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleValueChange(e)
@@ -134,7 +145,7 @@ export default function Slider({
         min={min}
         max={max}
         step={step}
-        value={valueState.toFixed(1)}
+        value={isDemical ? valueState.toFixed(1) : valueState}
         defaultValue={defaultValue}
         onChange={handleChange}
         className={`slider-range ${disabled ? 'slider-range-disabled' : ''} ${
@@ -146,7 +157,7 @@ export default function Slider({
           <input
             ref={ref}
             type="number"
-            value={valueState.toFixed(1)}
+            value={isDemical ? valueState.toFixed(1) : valueState}
             defaultValue={defaultValue}
             min={min}
             max={max}

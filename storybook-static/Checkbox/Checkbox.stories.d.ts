@@ -4,4 +4,5 @@ declare const meta: Meta<typeof Checkbox>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 export declare const Default: Story;
+export declare const WithLabel: Story;
 //# sourceMappingURL=Checkbox.stories.d.ts.map

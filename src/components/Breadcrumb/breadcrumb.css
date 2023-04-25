@@ -1,0 +1,27 @@
+.breadcrumb {
+  @apply relative  w-full;
+}
+
+.breadcrumb-list {
+  @apply text-left list-none m-0 p-0 flex flex-row justify-start items-center;
+}
+
+.breadcrumb-link {
+  @apply font-pretendard text-base text-secondaryText text-left list-none m-0 p-0 flex flex-row justify-start items-center;
+
+  &:hover {
+    @apply text-titleText;
+  }
+
+  &.last {
+    @apply text-titleText;
+  }
+}
+
+.breadcrumb-icon {
+  @apply mr-1;
+}
+
+.breadcrumb-separator {
+  @apply mx-2 font-pretendard text-base text-secondaryText;
+}

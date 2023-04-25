@@ -1,5 +1,7 @@
 import './checkbox.css'
 
+import React, { useState } from 'react'
+
 /**
  * Checkbox 컴포넌트의 props입니다.
  */
@@ -8,8 +10,6 @@ export interface CheckboxProps {
   autoFocus?: boolean
   /** 체크박스가 선택되어 있는지 여부를 지정합니다. */
   checked?: boolean
-  /** 초기 상태를 지정합니다. 체크박스가 선택되어 있는지 여부를 지정합니다. */
-  defaultChecked?: boolean
   /** 체크박스를 비활성화하는 경우 */
   disabled?: boolean
   /** 체크박스의 중간 선택 상태 */
@@ -17,6 +17,7 @@ export interface CheckboxProps {
   /** 상태가 변경될 때 트리거되는 콜백 함수 */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
   children?: React.ReactNode
+  name?: string
 }
 
 /**
@@ -30,27 +31,21 @@ export interface CheckboxProps {
  * import { Checkbox } from "grida";
  * ```
  */
-export default function Checkbox({
-  autoFocus,
-  checked,
-  defaultChecked,
-  disabled,
-  onChange,
-  children,
-}: CheckboxProps) {
+export default function Checkbox({ autoFocus, name, checked, disabled, children }: CheckboxProps) {
+  const [check, setCheck] = useState(checked)
   return (
-    <label className="container">
+    <label className="container" htmlFor={name}>
       <input
-        id="checkbox"
+        id={name}
+        name={name}
         type="checkbox"
         className="checkbox"
         autoFocus={autoFocus}
-        checked={checked}
-        defaultChecked={defaultChecked}
-        disabled={disabled}
-        onChange={onChange}
+        checked={check || checked}
+        disabled={!!disabled}
+        onChange={(e) => setCheck(e.target.checked)}
       />
-      <span className="checkmark">{children}</span>
+      <span className="checkbox-content">{children}</span>
     </label>
   )
 }

@@ -10,9 +10,14 @@
   }
 
   &:focus {
-    @apply outline-none ring-0;
+    @apply border-none outline-none shadow-none ring-0 ring-offset-0;
+  }
+
+  &:active {
+    @apply border-none outline-none shadow-none ring-0 ring-offset-0;
   }
 }
 
-.checkmark {
+.checkbox-content {
+  @apply font-pretendard text-base font-normal text-titleText ml-2.5;
 }

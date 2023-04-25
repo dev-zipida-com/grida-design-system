@@ -1,0 +1,130 @@
+.input-number {
+  @apply relative flex flex-row w-[78px] h-[30px] select-none;
+
+  &:hover {
+    & > .input-number-button {
+      opacity: 1;
+    }
+
+    & > .input-number-input {
+      border: 1px solid #8c3eff;
+    }
+  }
+
+  &-input {
+    @apply p-0 pl-2 w-full h-full text-titleText text-[14px] border-solid border-[1px] border-divider rounded-sm;
+    border: 1px solid #dedede;
+
+    &:focus {
+      border: 1px solid #8c3eff;
+      box-shadow: 0px 0px 3px #986bff;
+    }
+  }
+
+  &-button {
+    @apply absolute right-0 flex flex-col items-center justify-center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &-plus {
+      @apply flex items-center justify-center w-[20px] h-[15px] text-[14px] text-secondaryText border-l-[1px] border-b-[1px] border-solid border-divider cursor-pointer;
+
+      &-disabled {
+        pointer-events: none;
+      }
+
+      &:hover {
+        @apply bg-themeHover text-white border-themeHover border-l border-b;
+      }
+      &:active {
+        @apply bg-themePrimary text-white border-themePrimary border-l border-b;
+      }
+
+      &-only-disabled {
+        @apply cursor-not-allowed;
+
+        &:hover {
+          @apply bg-transparent text-secondaryText border-l border-b border-solid border-divider;
+        }
+      }
+    }
+    &-minus {
+      @apply flex items-center justify-center w-[20px] h-[15px] text-[16px] text-secondaryText border-l border-solid border-divider cursor-pointer;
+
+      &-disabled {
+        pointer-events: none;
+      }
+
+      &:hover {
+        @apply bg-themeHover text-white border-themeHover border-l border-b;
+      }
+      &:active {
+        @apply bg-themePrimary text-white border-themePrimary border-l border-t;
+      }
+
+      &-only-disabled {
+        @apply cursor-not-allowed;
+
+        &:hover {
+          @apply bg-transparent text-secondaryText border-l border-b-0 border-solid border-divider;
+        }
+      }
+    }
+  }
+
+  &-medium {
+    @apply w-[98px] h-[34px];
+
+    & > .input-number-input {
+      @apply text-[16px];
+    }
+
+    & > .input-number-button {
+      & > .input-number-button-plus {
+        @apply w-[21px] h-[17px] text-[15px];
+      }
+      & > .input-number-button-minus {
+        @apply w-[21px] h-[17px] text-[17px];
+      }
+    }
+  }
+
+  &-large {
+    @apply w-[109px] h-[38px];
+
+    & > .input-number-input {
+      @apply text-[16px];
+    }
+
+    & > .input-number-button {
+      & > .input-number-button-plus {
+        @apply w-[21px] h-[19px] text-[15px];
+      }
+      & > .input-number-button-minus {
+        @apply w-[21px] h-[19px] text-[17px];
+      }
+    }
+  }
+
+  &-disabled {
+    &:hover {
+      & > .input-number-input {
+        border: 1px solid #dedede;
+      }
+    }
+    & > .input-number-input {
+      @apply bg-bgDisabled text-disabledText;
+    }
+    & > .input-number-button > .input-number-button-plus,
+    .input-number-button-minus {
+      @apply text-disabledText;
+    }
+  }
+}
+
+/* input type=number박스 증가,감소 버튼 없애기 */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

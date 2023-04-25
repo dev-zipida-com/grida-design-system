@@ -5,7 +5,7 @@ import React from 'react';
 export interface SwitchProps {
     /**
      * 해당 컴포넌트가 그려질 때 최초로 포커스를 획득하는지 여부로 사용가능합니다.
-     * * 기본 값은 false입니다.
+     * 기본 값은 false입니다.
      */
     autoFocus?: boolean;
     /**
@@ -18,34 +18,20 @@ export interface SwitchProps {
      */
     checkedChildren?: React.ReactNode;
     /**
-     * 초기 상태 설정 여부를 설정합니다.
-     * * 기본 값은 false입니다.
-     */
-    defaultChecked?: boolean;
-    /**
      * 스위치 비활성화 속성입니다.
-     * * 기본 값은 false입니다.
+     * 기본 값은 false입니다.
      */
     disabled?: boolean;
     /**
-     * 스위치 로딩 상태 속성입니다.
-     * * 기본 값은 false입니다.
-     */
-    loading?: boolean;
-    /**
      * 스위치의 크기를 선택하는 속성입니다.
-     * 옵션 : default, small
-     * 기본값은 default입니다.
+     * 옵션 : small, medium
+     * 기본값은 small입니다.
      */
-    size?: 'default' | 'small';
+    size?: 'small' | 'medium';
     /**
      * 상태가 선택 취소되었을 때 표시할 콘텐츠입니다.
      */
     unCheckedChildren?: React.ReactNode;
-    /**
-     * 체크된 상태가 변경될 때 트리거입니다.
-     */
-    onChange?: (checked: boolean, event: React.ChangeEvent<HTMLInputElement>) => void;
     /**
      * Switch 클릭 할 때 트리거입니다.
      */
@@ -62,5 +48,5 @@ export interface SwitchProps {
  * import { Switch } from "grida";
  * ```
  */
-export default function Tag({ autoFocus, checked, checkedChildren, defaultChecked, disabled, loading, size, unCheckedChildren, onChange, onClick, }: SwitchProps): JSX.Element;
+export default function Switch({ autoFocus, checked, checkedChildren, unCheckedChildren, disabled, size, onClick, }: SwitchProps): JSX.Element;
 //# sourceMappingURL=Switch.d.ts.map

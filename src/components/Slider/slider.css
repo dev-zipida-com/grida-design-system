@@ -1,5 +1,5 @@
 .slider {
-  @apply flex flex-row items-center gap-[20px];
+  @apply flex flex-row items-center gap-[20px] select-none;
 
   &-range {
     @apply cursor-pointer w-[250px] h-[4px];

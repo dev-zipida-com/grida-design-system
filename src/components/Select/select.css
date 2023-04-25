@@ -22,6 +22,32 @@
     box-shadow: 0px 0px 3px #986bff;
   }
 
+  &-error {
+    @apply border-statusError;
+
+    &:hover {
+      @apply border border-solid border-statusError;
+    }
+
+    &:focus {
+      @apply border border-solid border-statusError;
+      box-shadow: 0px 0px 3px rgba(242, 100, 96, 1);
+    }
+  }
+
+  &-warning {
+    @apply border-statusWarning;
+
+    &:hover {
+      @apply border border-solid border-statusWarning;
+    }
+
+    &:focus {
+      @apply border border-solid border-statusWarning;
+      box-shadow: 0px 0px 3px rgba(242, 170, 82, 1);
+    }
+  }
+
   &-disabled {
     @apply bg-bgDisabled cursor-not-allowed text-secondaryText;
     border: 1px solid #dedede;

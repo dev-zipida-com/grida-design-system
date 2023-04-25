@@ -38,6 +38,11 @@ export interface SelectProps {
    */
   options?: OptionType[]
   /**
+   * select box의 상태를 설정할 수 있습니다.
+   * 기본 값은 default 입니다.
+   */
+  status?: 'default' | 'error' | 'warning'
+  /**
    * select box의 크기를 정할 수 있습니다.
    * 기본 값은 middle 입니다.
    */
@@ -52,7 +57,7 @@ export interface SelectProps {
  * 컴포넌트를 선택하여 옵션에서 값을 선택합니다.
  *
  * ## 언제 사용하나요?
- * - 선택 항목을 표시하는 드롭다운 메뉴 - 기본 <select> 요소의 우아한 대안입니다.
+ * - 선택 항목을 표시하는 드롭다운 메뉴 - 기본 select 태그 요소의 우아한 대안입니다.
  * - 비슷한 컴포넌트인 Radio는 총 옵션 수가 적을 때(5개 미만) 사용하는 것이 좋습니다.
  *
  * ```js
@@ -65,6 +70,7 @@ export default function Select({
   defaultValue,
   disabled = false,
   options,
+  status = 'default',
   size = 'medium',
   onChange,
 }: SelectProps) {
@@ -74,7 +80,7 @@ export default function Select({
 
   return (
     <select
-      className={`select ${disabled ? 'select-disabled' : null} ${
+      className={`select select-${status} ${disabled ? 'select-disabled' : null} ${
         size === 'large'
           ? 'select-size-large'
           : size === 'medium'

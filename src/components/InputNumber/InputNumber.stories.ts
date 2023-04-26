@@ -26,9 +26,10 @@ export const Disabled: Story = {
 
 export const ButtonDisabled: Story = {
   args: {
-    max: 1,
-    value: 0,
+    max: 10,
     min: 0,
+    value: 0,
+    step: 4,
   },
 }
 

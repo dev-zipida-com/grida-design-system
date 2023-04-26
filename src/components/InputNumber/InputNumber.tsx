@@ -107,16 +107,16 @@ export default function InputNumber({
   }
 
   const handleButtonPlusClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (valueState + step > max) return
     e.preventDefault()
     ref.current?.focus()
-    if (valueState >= max) return
     setValueState((prev) => prev + step)
   }
 
   const handleButtonMinusClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (valueState - step < min) return
     e.preventDefault()
     ref.current?.focus()
-    if (valueState <= min) return
     setValueState((prev) => prev - step)
   }
 
@@ -142,7 +142,7 @@ export default function InputNumber({
           ref={plusRef}
           className={`input-number-button-plus ${
             disabled ? 'input-number-button-plus-disabled' : null
-          } ${valueState === max ? 'input-number-button-plus-only-disabled' : null}`}
+          } ${valueState + step > max ? 'input-number-button-plus-only-disabled' : null}`}
           onClick={handleButtonPlusClick}
         >
           +
@@ -150,7 +150,7 @@ export default function InputNumber({
         <div
           className={`input-number-button-minus ${
             disabled ? 'input-number-button-minus-disabled' : null
-          } ${valueState === min ? 'input-number-button-minus-only-disabled' : null}`}
+          } ${valueState - step < min ? 'input-number-button-minus-only-disabled' : null}`}
           onClick={handleButtonMinusClick}
         >
           -

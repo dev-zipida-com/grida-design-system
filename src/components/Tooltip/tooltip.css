@@ -1,0 +1,44 @@
+.tooltip {
+  @apply relative inline-flex flex-col gap-[4px] bg-[#3F4155] px-[12px] py-[5px] rounded-sm w-auto h-auto max-w-[253px] border-none;
+
+  &-text {
+    @apply text-darkPrimaryText font-pretendard;
+  }
+
+  &-title {
+    @apply text-[14px] font-medium leading-[150%];
+  }
+
+  &-content {
+    @apply text-xs font-normal leading-[130%];
+  }
+
+  &-button {
+    @apply inline-flex items-end justify-end mt-[15px] text-[14px];
+
+    &-section:hover {
+      @apply opacity-60;
+    }
+  }
+
+  &-caret {
+    @apply absolute;
+
+    &-top {
+      @apply top-[-10px] left-[50%];
+      transform: translate(-50%);
+    }
+    &-right {
+      @apply right-[-10px] top-[50%];
+      transform: translate(0, -50%);
+    }
+    &-bottom {
+      @apply bottom-[-10px] left-[50%];
+      transform: translate(-50%);
+    }
+    &-left {
+      @apply left-[-10px] top-[50%];
+      transform: translate(0, -50%);
+    }
+  }
+}

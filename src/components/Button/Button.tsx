@@ -46,11 +46,12 @@ export default function Button({
   disabled = false,
   htmlType = 'button',
   icon,
-  shape,
-  size,
-  buttonType,
+  shape = 'default',
+  size = 'middle',
+  buttonType = 'primary',
   onClick,
   children,
+  ...restProps
 }: ButtonProps &
   React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>) {
   return (
@@ -61,6 +62,7 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
       type={htmlType}
+      {...restProps}
     >
       {children || 'Button'} {icon && icon}
     </button>

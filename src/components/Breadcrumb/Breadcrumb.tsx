@@ -37,9 +37,9 @@ export interface items {
  * import { Breadcrumb } from "grida";
  * ```
  */
-export default function Breadcrumb({ items, separator = '/' }: BreadcrumbProps) {
+export default function Breadcrumb({ items, separator = '/', ...restProps }: BreadcrumbProps) {
   return (
-    <nav className={'breadcrumb'}>
+    <nav className={'breadcrumb'} {...restProps}>
       <ol className={'breadcrumb-list'}>
         {items?.map((item, index, array) => {
           return (

@@ -29,7 +29,7 @@ export interface ButtonProps {
   /* primary, ghost, dashed, link, text, default 중 하나로 설정할 수 있습니다 */
   buttonType?: 'default' | 'primary' | 'ghost' | 'outline' | 'dashed' | 'link' | 'text'
   /* 클릭 이벤트를 처리하기 위한 핸들러를 설정합니다 */
-  onClick?: (event: React.MouseEvent) => void
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
   children?: React.ReactNode
 }
 

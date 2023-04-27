@@ -25,19 +25,51 @@
     @apply absolute;
 
     &-top {
-      @apply top-[-10px] left-[50%];
-      transform: translate(-50%);
-    }
-    &-right {
-      @apply right-[-10px] top-[50%];
-      transform: translate(0, -50%);
-    }
-    &-bottom {
       @apply bottom-[-10px] left-[50%];
       transform: translate(-50%);
     }
-    &-left {
+    &-topLeft {
+      @apply bottom-[-10px] right-0;
+      transform: translate(-50%);
+    }
+    &-topRight {
+      @apply bottom-[-10px] left-0;
+      transform: translate(50%);
+    }
+    &-right {
       @apply left-[-10px] top-[50%];
+      transform: translate(0, -50%);
+    }
+    &-rightTop {
+      @apply left-[-10px] top-[50%];
+      transform: translate(0, -50%);
+    }
+    &-rightBottom {
+      @apply left-[-10px] top-[50%];
+      transform: translate(0, -50%);
+    }
+    &-bottom {
+      @apply top-[-10px] left-[50%];
+      transform: translate(-50%);
+    }
+    &-bottomLeft {
+      @apply top-[-10px] right-0;
+      transform: translate(-50%);
+    }
+    &-bottomRight {
+      @apply top-[-10px] left-0;
+      transform: translate(50%);
+    }
+    &-left {
+      @apply right-[-10px] top-[50%];
+      transform: translate(0, -50%);
+    }
+    &-leftTop {
+      @apply right-[-10px] top-[50%];
+      transform: translate(0, -50%);
+    }
+    &-leftBottom {
+      @apply right-[-10px] top-[50%];
       transform: translate(0, -50%);
     }
   }

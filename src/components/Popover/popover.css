@@ -1,0 +1,20 @@
+.popover {
+  @apply flex flex-col bg-white w-auto max-w-[260px] h-auto rounded-sm;
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.05), 2px 0px 11px rgba(0, 0, 0, 0.05);
+
+  &-title {
+    @apply px-3 py-2 border-b border-solid border-divider;
+    &-text {
+      @apply text-lg font-bold text-titleText font-pretendard leading-normal;
+      word-break: break-word;
+    }
+  }
+
+  &-content {
+    @apply px-3 py-2;
+    &-text {
+      @apply text-sm font-normal text-primaryText font-pretendard leading-normal;
+      word-break: break-word;
+    }
+  }
+}

@@ -23,9 +23,23 @@ export interface TooltipProps {
    */
   color?: string
   /**
-   * Tooltip의 배경색입니다.
+   * Tooltip의 위치 설정입니다.
+   * * topRight, top, topLeft, rightTop, right, rightBottom, bottomLeft, bottom, bottomRight, leftTop, left, leftBottom중 하나입니다.
+   * 기본값은 top입니다.
    */
-  placement: 'top' | 'right' | 'bottom' | 'left'
+  placement:
+    | 'topRight'
+    | 'top'
+    | 'topLeft'
+    | 'rightTop'
+    | 'right'
+    | 'rightBottom'
+    | 'bottomLeft'
+    | 'bottom'
+    | 'bottomRight'
+    | 'leftTop'
+    | 'left'
+    | 'leftBottom'
   /**
    * 대상을 기준으로 한 도구 설명의 위치입니다.
    * top, right, bottom, left 중 하나일 수 있습니다.
@@ -65,7 +79,7 @@ export default function Tooltip({
   title,
   content,
   color,
-  placement = 'right',
+  placement = 'top',
   isButton = false,
   buttonText = 'Got It',
   theme = 'basic',
@@ -90,14 +104,14 @@ export default function Tooltip({
         </div>
       )}
       <div className={`tooltip-caret tooltip-caret-${placement}`}>
-        {placement === 'top' ? (
-          <AiFillCaretUp color={color ? color : colorCode[theme || 'basic']} />
-        ) : placement === 'right' ? (
-          <AiFillCaretRight color={color ? color : colorCode[theme || 'basic']} />
-        ) : placement === 'bottom' ? (
+        {placement === 'top' || placement === 'topRight' || placement === 'topLeft' ? (
           <AiFillCaretDown color={color ? color : colorCode[theme || 'basic']} />
-        ) : (
+        ) : placement === 'rightTop' || placement === 'right' || placement === 'rightBottom' ? (
           <AiFillCaretLeft color={color ? color : colorCode[theme || 'basic']} />
+        ) : placement === 'bottom' || placement === 'bottomLeft' || placement === 'bottomRight' ? (
+          <AiFillCaretUp color={color ? color : colorCode[theme || 'basic']} />
+        ) : (
+          <AiFillCaretRight color={color ? color : colorCode[theme || 'basic']} />
         )}
       </div>
     </div>

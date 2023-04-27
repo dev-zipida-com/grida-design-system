@@ -1,0 +1,73 @@
+.popconfirm {
+  @apply relative flex flex-col w-[309px] h-auto px-5 py-[15px] rounded-sm;
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+
+  &-content {
+    @apply flex flex-row items-start mb-[10px];
+
+    &-icon {
+      @apply w-[19px] h-[19px] mr-[6px];
+    }
+
+    &-title {
+      @apply flex-1 text-titleText font-pretendard font-normal text-[14px] leading-normal;
+    }
+  }
+
+  &-buttons {
+    @apply flex flex-row mb-[4px] gap-[5px] justify-end;
+  }
+
+  &-caret {
+    @apply absolute;
+
+    &-top {
+      @apply bottom-[-10px] left-[50%];
+      transform: translate(-50%);
+    }
+    &-topLeft {
+      @apply bottom-[-10px] right-0;
+      transform: translate(-100%);
+    }
+    &-topRight {
+      @apply bottom-[-10px] left-0;
+      transform: translate(100%);
+    }
+    &-right {
+      @apply left-[-10px] top-[50%];
+      transform: translate(0, -50%);
+    }
+    &-rightTop {
+      @apply left-[-10px] bottom-0;
+      transform: translate(0, -80%);
+    }
+    &-rightBottom {
+      @apply left-[-10px] top-0;
+      transform: translate(0, 80%);
+    }
+    &-bottom {
+      @apply top-[-10px] left-[50%];
+      transform: translate(-50%);
+    }
+    &-bottomLeft {
+      @apply top-[-10px] right-0;
+      transform: translate(-100%);
+    }
+    &-bottomRight {
+      @apply top-[-10px] left-0;
+      transform: translate(100%);
+    }
+    &-left {
+      @apply right-[-10px] top-[50%];
+      transform: translate(0, -50%);
+    }
+    &-leftTop {
+      @apply right-[-10px] bottom-0;
+      transform: translate(0, -80%);
+    }
+    &-leftBottom {
+      @apply right-[-10px] top-0;
+      transform: translate(0, 80%);
+    }
+  }
+}

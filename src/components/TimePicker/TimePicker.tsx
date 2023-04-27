@@ -1,6 +1,5 @@
 import './timePicker.css'
 
-import dayjs from 'dayjs'
 import React from 'react'
 
 /**

@@ -1,0 +1,48 @@
+.date-picker {
+  @apply bg-white border border-solid border-[#DEDEDE] rounded-sm w-fit transition-all ease-in-out duration-300;
+
+  &:hover {
+    @apply border border-solid border-[#8C3EFF];
+  }
+
+  &.date-picker-focus {
+    @apply border border-solid border-[#8C3EFF] shadow-focus;
+  }
+}
+
+.picker-input {
+  @apply w-auto h-8 border-none;
+
+  &:active {
+    @apply border-none outline-none shadow-none ring-0 ring-offset-0;
+  }
+
+  &:foucs {
+    @apply border-none outline-none shadow-none ring-0 ring-offset-0;
+  }
+
+  &:focus-visible {
+    @apply border-none outline-none shadow-none ring-0 ring-offset-0;
+  }
+
+  &:placeholder {
+    @apply text-[#000000] opacity-30;
+  }
+
+  /* Custom 작업 전 제거 input date 계열 color */
+  &::-webkit-datetime-edit-text {
+    @apply text-[#000000] opacity-30;
+  }
+
+  &::-webkit-datetime-edit-month-field {
+    @apply text-[#000000] opacity-30;
+  }
+
+  &::-webkit-datetime-edit-day-field {
+    @apply text-[#000000] opacity-30;
+  }
+
+  &::-webkit-datetime-edit-year-field {
+    @apply text-[#000000] opacity-30;
+  }
+}

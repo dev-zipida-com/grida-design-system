@@ -1,0 +1,33 @@
+.progress-line {
+  @apply relative w-[500px] h-auto flex flex-row items-center gap-[15px];
+
+  &-outer {
+    @apply relative flex w-full h-[10px] bg-bgDisabled rounded-sm;
+
+    &-label {
+      width: calc(100% - 53px);
+    }
+  }
+
+  &-inner {
+    @apply absolute left-0 h-full bg-red-500 max-w-full;
+    transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
+  }
+
+  &-label {
+    &-icon {
+      @apply text-center w-[25px] h-[25px];
+    }
+    &-text {
+      @apply text-[16px] text-titleText font-pretendard font-medium leading-normal;
+    }
+  }
+}
+
+.progress-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(#8c3eff 75%, #f5f5f5 0);
+}
